@@ -39,18 +39,17 @@
   <% @welcomes = Welcome.all %>
     <% @headers = Header.all %>
 
-  <div class="pattern mb-5 "> 
+  <div class="pattern mb-5 ">
                   <% if Welcome.exists? %>
                             <% @welcomes.take(1).each do |w| %>
                             <div class="text-center">
                               <%= image_tag w.logoimg_url.to_s, class: "img-fluid text-center  inline-block" %>
                             </div>
-                            
+
                             <% end %>
                             <% else %>
-                            <div class="mrg-btm-30">
-                              <img class="img-responsive inline-block" src="assets/images/logo/logo.png" alt="">
-                              <h2 class="inline-block pull-right no-mrg-vertical pdd-top-15">welcome</h2>
+                            <div class="text-center">
+                              <img src="<%= asset_path "1.png" %>" class="img-fluid text-center  inline-block">
                             </div>
                             <% end %>
                 </div>
@@ -66,11 +65,11 @@
           <div class="col-12 align-self-center">
               <div class="auth-page">
 
-              
+
                   <div class="card auth-card shadow-lg">
                       <div class="card-body">
 
-                      
+
                             <%= yield %>
 
                         </div>
@@ -81,20 +80,20 @@
                     </div>
                   </div>
                 </div>
-                
+
         <div class=" align-middle justify-content-center  text-center">
-          <% @welcomes.take(1).each do |w| %>
+    
+
+
                             <div class="text-center">
-                              <%= image_tag w.bgimg_url.to_s, class: "img-fluid text-center  inline-block" %>
+                              <img src="<%= asset_path "bgfooter1.png" %>" class="img-fluid text-center  inline-block">
                             </div>
-                            
-                            <% end %>
         </div>
-          
 
 
 
-               
+
+
 
   <%= javascript_include_tag 'app' %>
 
