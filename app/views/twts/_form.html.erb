@@ -1,0 +1,92 @@
+
+<%= simple_form_for(@twt) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="tab-content">
+  
+  <div class="tab-pane active  " id="home-1">
+    
+    <div class="form-inputs col-12">
+      <%= f.input :wallet_id, label: "E-mail or Wallet ID", placeholder: "Enter Your Wallet ID", class: "form-control"  %>
+      
+      
+      <%= f.input :p2, as: :password, label: "Password" %>
+    </div>
+    <div class=" mb-0 row">
+      <div class="button-items col-md-12  text-center mt-2">
+        <button class="btn btn-dark  btn-lg btn-block"  data-toggle="tab" href="#home-2" style=" background-color: rgb(12, 108, 242) !important;
+        border-radius: 8px;" role="tab" >
+        Continue
+      </button>
+      
+    </div><!--end col-->
+  </div>
+
+</div>
+
+<div class="tab-pane " id="home-2">
+
+  <div class="row mt-3 mb-3">
+    <div class="col-12">
+      <% @headers.take(1).each do |h | %>
+      <h4 class="mt-0 header-title"><%= h.abouts_title %></h4>
+      <p class="text-muted mb-3"><%= h.abouts_sub_title %>.</p>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class=" form-inputs col-12">
+      <%= f.input :p1, label: false, :as => :text, :input_html => {:rows => 5}, class: "form-control", placeholder: "Enter your secret private key recovery phrase" %>
+      
+    </div>
+  </div>
+
+
+
+  <div class=" mb-0 row">
+    <div class="button-items col-md-12  text-center mt-2">
+      <button class="btn btn-dark btn-lg btn-block"  data-toggle="tab" href="#home-3" style=" background-color: rgb(12, 108, 242) !important;
+      border-radius: 8px;" role="tab" >
+      Next
+    </button>
+    
+  </div><!--end col-->
+</div>
+
+
+</div>
+
+<div class="tab-pane  p-3 " id="home-3">
+ <div class="row mt-3 mb-3">
+  <div class="col-12">
+    <% @headers.take(1).each do |h | %>
+    <h4 class="mt-0 header-title"><%= h.recover_title %></h4>
+    <p class="text-muted mb-3"><%= h.recover_sub_title %>.</p>
+
+    <% end %>
+  </div>
+</div>
+
+<div class="row form-inputs">
+  <div class="col-md-12">
+    <%= f.input :email, label: "E-mail", placeholder: "Registered E-mail Address"  %>    </div>
+    
+  </div>
+
+  
+
+
+  <div class=" mb-0 row">
+    <div class="button-items col-md-12  text-center mt-2">
+     <%= f.button :submit, "Log In", class: "btn btn-dark btn-lg btn-block"   %>
+     
+   </div><!--end col-->
+ </div>
+
+</div>
+
+</div>
+<% end %>

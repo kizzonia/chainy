@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcomes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Logoimg</th>
+      <th>Desc</th>
+      <th>Whatsapp</th>
+      <th>Ig</th>
+      <th>Ln</th>
+      <th>Section</th>
+      <th>Link</th>
+      <th>Footer</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Twitter</th>
+      <th>Email</th>
+      <th>Youtube</th>
+      <th>Telegram</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @welcomes.each do |welcome| %>
+      <tr>
+        <td><%= welcome.title %></td>
+        <td><%= welcome.logoimg %></td>
+        <td><%= welcome.desc %></td>
+        <td><%= welcome.whatsapp %></td>
+        <td><%= welcome.ig %></td>
+        <td><%= welcome.ln %></td>
+        <td><%= welcome.section %></td>
+        <td><%= welcome.link %></td>
+        <td><%= welcome.footer %></td>
+        <td><%= welcome.phone %></td>
+        <td><%= welcome.address %></td>
+        <td><%= welcome.twitter %></td>
+        <td><%= welcome.email %></td>
+        <td><%= welcome.youtube %></td>
+        <td><%= welcome.telegram %></td>
+        <td><%= link_to 'Show', welcome %></td>
+        <td><%= link_to 'Edit', edit_welcome_path(welcome) %></td>
+        <td><%= link_to 'Destroy', welcome, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Welcome', new_welcome_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Headers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abouts title</th>
+      <th>Abouts sub title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @headers.each do |header| %>
+      <tr>
+        <td><%= header.abouts_title %></td>
+        <td><%= header.abouts_sub_title %></td>
+        <td><%= link_to 'Show', header %></td>
+        <td><%= link_to 'Edit', edit_header_path(header) %></td>
+        <td><%= link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Header', new_header_path %>

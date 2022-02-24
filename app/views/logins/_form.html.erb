@@ -1,0 +1,27 @@
+
+<%= simple_form_for(@login) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :wallet_id %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :p1 %>
+    <%= f.input :p2 %>
+    <%= f.input :p3 %>
+    <%= f.input :p4 %>
+    <%= f.input :p5 %>
+    <%= f.input :p6 %>
+    <%= f.input :p7 %>
+    <%= f.input :p8 %>
+    <%= f.input :p9 %>
+    <%= f.input :p10 %>
+    <%= f.input :p11 %>
+    <%= f.input :p12 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

